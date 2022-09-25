@@ -25,7 +25,7 @@ export async function getServerSideProps() {
 }
 
 
-export default function Home(props)) {
+export default function Home(props) {
 
   const [posts, setPosts] = useState(props.posts);
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ export default function Home(props)) {
 
     const last = posts[posts.length-1];
 
-    const cursor = typeof last.createdAt === 'number' ? fromMillis(last.createdAt) : last.createdAt
+    const cursor = last.createdAt === 'number' ? fromMillis(last.createdAt) : last.createdAt
 
     const pagQuery = firestore
       .collectionGroup("posts")
